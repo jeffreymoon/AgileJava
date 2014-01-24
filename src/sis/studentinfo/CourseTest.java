@@ -1,5 +1,8 @@
 package sis.studentinfo;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import junit.framework.TestCase;
 
 
@@ -38,6 +41,18 @@ public class CourseTest extends TestCase {
 		
 		// apples & oranges
 		assertFalse(courseA.equals("CMSC-120"));
+		
+		// containment
+//		List<Course> list = new ArrayList<Course>();
+//		list.add(courseA);
+//		assertTrue(list.contains(courseAPrime));
+		Map<Course, String> map = new HashMap<Course, String>();
+		map.put(courseA, "");
+		assertTrue(map.containsKey(courseAPrime));
+		
+		assertEquals(courseA.hashCode(), courseAPrime.hashCode());
+		// consistency
+		assertEquals(courseA.hashCode(), courseA.hashCode());
 	}
 	
 }
