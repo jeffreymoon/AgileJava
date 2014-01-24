@@ -20,21 +20,24 @@ public class CourseTest extends TestCase {
 		assertFalse(courseA.equals(courseB));
 
 		// reflexivity
-		assertEquals(courseA, courseA);
+		assertTrue(courseA.equals(courseA));
 		
 		// symmetry
-		assertEquals(courseAPrime, courseA);
+		assertTrue(courseAPrime.equals(courseA));
 
 		// transitivity
 		Course courseAPrime2 = new Course("NURS", "201");
-		assertEquals(courseAPrime, courseAPrime2);
-		assertEquals(courseA, courseAPrime2);
+		assertTrue(courseAPrime.equals(courseAPrime2));
+		assertTrue(courseA.equals(courseAPrime2));
 		
 		// consistency
-		assertEquals(courseA, courseAPrime);
+		assertTrue(courseA.equals(courseAPrime));
 		
 		// comparison to null
 		assertFalse(courseA.equals(null));
+		
+		// apples & oranges
+		assertFalse(courseA.equals("CMSC-120"));
 	}
 	
 }
