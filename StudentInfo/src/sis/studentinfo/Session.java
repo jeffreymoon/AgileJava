@@ -13,17 +13,19 @@ import java.util.Vector;
 public abstract class Session implements Comparable<Session>, Iterable<Student>{
 
 //    private static int count;
-    private String department;
-    private String number;
+//    private String department;
+//    private String number;
+    private Course course;
 //    private List<Student> students = new ArrayList<Student>();
     private Vector<Student> students = new Vector<Student>();
     private Date startDate;
     private int numberOfCredits;
     private URL url;
 
-    protected Session(String department, String number, Date startDate) {
-        this.department = department;
-        this.number = number;
+    protected Session(Course course, Date startDate) {
+//        this.department = course.getDepartment();
+//        this.number = course.getNumber();
+    	this.course = course;
         this.startDate = startDate;
     }
 
@@ -41,11 +43,11 @@ public abstract class Session implements Comparable<Session>, Iterable<Student>{
     }
     
     public String getDepartment() {
-        return department;
+        return course.getDepartment();
     }
 
     public String getNumber() {
-        return number;
+        return course.getNumber();
     }
 
     int getNumberOfStudents() {

@@ -6,6 +6,7 @@ import sis.report.ReportCardTest;
 import sis.report.RosterReporterTest;
 import sis.studentinfo.BasicGradingStrategyTest;
 import sis.studentinfo.CourseSessionTest;
+import sis.studentinfo.CourseTest;
 import sis.studentinfo.DateUtilTest;
 import sis.studentinfo.HonorsGradingStrategyTest;
 import sis.studentinfo.SessionTest;
@@ -28,6 +29,7 @@ public class AllTests {
         suite.addTestSuite(SummerCourseSessionTest.class);
         suite.addTestSuite(SessionTest.class);
         suite.addTestSuite(StudentDirectoryTest.class);
+        suite.addTestSuite(CourseTest.class);
         return suite;
     }
 }

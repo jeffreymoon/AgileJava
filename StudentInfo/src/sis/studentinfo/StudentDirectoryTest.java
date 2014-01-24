@@ -27,7 +27,7 @@ public class StudentDirectoryTest extends TestCase {
         }
     }
 
-    private void addStudent(StudentDirectory directory, int i) { // throws IOException {
+    private void addStudent(StudentDirectory directory, int i) throws IOException {
         String id = "" + i;
         Student student = new Student(id);
         student.setId(id);
