@@ -17,7 +17,8 @@ public class Account {
 	}
 
 	public BigDecimal transactionAverage() {
-		return balance.divide(new BigDecimal(transactionCount), BigDecimal.ROUND_HALF_UP);
+		return balance.divide(new BigDecimal(transactionCount),
+				BigDecimal.ROUND_HALF_UP);
 	}
 
 }
