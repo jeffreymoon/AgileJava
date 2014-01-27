@@ -17,8 +17,8 @@ public class ReportCard {
         return getMessages().get(grade);
     }
 
-    private Map<Grade, String> getMessages() {
-        if (messages  == null) {
+    public Map<Grade, String> getMessages() {
+        if (messages == null) {
             loadMessages();
         }
         return messages;

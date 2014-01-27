@@ -63,4 +63,8 @@ public class Course {
 				&& this.number.equals(that.number);
 	}
 
+	@Override
+	public String toString() {
+		return department + " " + number;
+	}
 }
