@@ -63,5 +63,4 @@ public class Course {
 				&& this.number.equals(that.number);
 	}
 
-	
 }
