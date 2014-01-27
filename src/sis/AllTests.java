@@ -4,6 +4,7 @@ import junit.framework.TestSuite;
 import sis.report.CourseReportTest;
 import sis.report.ReportCardTest;
 import sis.report.RosterReporterTest;
+import sis.studentinfo.AccountTest;
 import sis.studentinfo.BasicGradingStrategyTest;
 import sis.studentinfo.CourseSessionTest;
 import sis.studentinfo.CourseTest;
@@ -30,6 +31,7 @@ public class AllTests {
         suite.addTestSuite(SessionTest.class);
         suite.addTestSuite(StudentDirectoryTest.class);
         suite.addTestSuite(CourseTest.class);
+        suite.addTestSuite(AccountTest.class);
         return suite;
     }
 }
