@@ -4,7 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
+import sis.studentinfo.Student.Flag;
+
 public class Student {
+	
+	public enum Flag {
+		ON_CAMPUS(1), TAX_EXEMPT(2), MINOR(4), TROUBLEMAKER(8);
+		
+		private int mask;
+		
+		Flag(int mask) {
+			this.mask = mask;
+		}
+	}
 
     public enum Grade {
         A(4), B(3), C(2), D(1), F(0);
@@ -34,6 +46,7 @@ public class Student {
     private String middleName = "";
     private List<Integer> charges = new ArrayList<Integer>();
     private String id;
+	private int settings = 0x0;
     static final int MAX_NAME_PARTS = 3;
 
     public Student(String fullName) {
@@ -198,5 +211,25 @@ public class Student {
     public String getId() {
         return id;
     }
+
+	public void set(Flag... flags) {
+		for (Flag flag : flags) {
+			settings  |= flag.mask;
+		}
+	}
+
+	public boolean isOn(Flag flag) {
+		return (settings & flag.mask) == flag.mask;
+	}
+
+	public boolean isOff(Flag flag) {
+		return !isOn(flag);
+	}
+
+	public void unset(Flag... flags) {
+		for (Flag flag : flags) {
+			settings &= ~flag.mask;
+		}
+	}
 
 }
