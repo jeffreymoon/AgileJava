@@ -15,7 +15,7 @@ public class RosterReporter {
         this.session = session;
     }
 
-    public String getRosterReport() {
+    public String getReport() {
         StringBuilder buffer = new StringBuilder();
         writeHeader(buffer);
         writeBody(buffer);
